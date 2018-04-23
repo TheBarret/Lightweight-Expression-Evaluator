@@ -84,7 +84,6 @@
     <Compile Include="Settings.vb" />
     <Compile Include="Expression.vb" />
     <Compile Include="Token.vb" />
-    <Compile Include="Tokenizer.vb" />
     <Compile Include="Tokens.vb" />
     <Compile Include="Tree.vb" />
     <Compile Include="TValue.vb" />
