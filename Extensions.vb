@@ -1,4 +1,8 @@
-﻿Module Extensions
+﻿Imports System.Text
+Imports System.IO
+Imports System.IO.Compression
+
+Public Module Extensions
     <Runtime.CompilerServices.Extension>
     Public Function ToSymbol(token As Tokens) As String
         Select Case token
@@ -19,5 +23,13 @@
     <Runtime.CompilerServices.Extension>
     Public Function IsNumber(value As Char) As Boolean
         Return Double.TryParse(value, Settings.Float, Settings.Culture, Nothing)
+    End Function
+    <Runtime.CompilerServices.Extension>
+    Public Function IsNumberRelated(value As Char) As Boolean
+        Return value = "." Or value = "E" Or value = "e"
+    End Function
+    <Runtime.CompilerServices.Extension>
+    Public Function IsNumberRelated(value As String) As Boolean
+        Return value = "." Or value = "E" Or value = "e"
     End Function
 End Module

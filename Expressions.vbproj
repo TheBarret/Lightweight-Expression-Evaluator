@@ -64,7 +64,6 @@
     <Compile Include="Elements\Binary.vb" />
     <Compile Include="Elements\Expression.vb" />
     <Compile Include="Elements\Number.vb" />
-    <Compile Include="Elements\Unary.vb" />
     <Compile Include="Extensions.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -85,7 +84,7 @@
     <Compile Include="Expression.vb" />
     <Compile Include="Token.vb" />
     <Compile Include="Tokens.vb" />
-    <Compile Include="Tree.vb" />
+    <Compile Include="Abstractor.vb" />
     <Compile Include="TValue.vb" />
   </ItemGroup>
   <ItemGroup>
