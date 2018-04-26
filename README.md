@@ -1,5 +1,5 @@
-# Lightweight-Expression-Evaluator
-Super lightweight expression evaluator 
+# Lightweight Expression Evaluator
+
 
 Evaluation from string:
 ```
