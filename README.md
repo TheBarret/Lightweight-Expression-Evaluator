@@ -1,14 +1,14 @@
 # Lightweight-Expression-Evaluator
 Super lightweight expression evaluator 
 
-Usage:
+Evaluation from string:
 ```
 Dim expression As String = "(1E2+3.14)/5--.5"
 
 Dim result as double = New Expression(expression).Evaluate
 ```
 
-From byte array:
+Evaluation from byte array:
 ```
 Dim expression As String = "(1E2+3.14)/5--.5"
 
