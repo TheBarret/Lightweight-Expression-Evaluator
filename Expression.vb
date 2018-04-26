@@ -104,7 +104,7 @@ Public Class Expression
             Case GetType(Elements.Binary)
                 Return Me.Evaluate(CType(expression, Elements.Binary))
             Case GetType(Elements.Number)
-                Return Me.Evaluate(CType(expression, Elements.Number))
+                Return New TValue(CType(expression, Elements.Number).Value)
         End Select
         Throw New Exception(String.Format("undefined expression type '{0}'", expression.GetType))
     End Function
@@ -130,8 +130,5 @@ Public Class Expression
             Throw New Exception(String.Format("unexpected value '{0}'", right.Value))
         End If
         Throw New Exception(String.Format("undefined operator type '{0}'", expression.Operator))
-    End Function
-    Private Function Evaluate(expression As Elements.Number) As TValue
-        Return New TValue(expression.Value)
     End Function
 End Class
