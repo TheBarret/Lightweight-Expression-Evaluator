@@ -4,7 +4,7 @@
         Me.Value = value
     End Sub
     Public Function IsNumber() As Boolean
-        Return TypeOf Me.Value Is Double Or TypeOf Me.Value Is Int64
+        Return TypeOf Me.Value Is Double
     End Function
     Public Function ToNumber(Optional round As Boolean = False) As Double
         Return If(round, Math.Round(CType(Me.Value, Double)), CType(Me.Value, Double))
