@@ -120,10 +120,10 @@ Public Class Expression
                 Case Tokens.MULT
                     Return New TValue(left.ToNumber * right.ToNumber)
                 Case Tokens.DIV
-                    If (right.ToNumber >= 1) Then Return New TValue(left.ToNumber / right.ToNumber)
+                    If (right.ToNumber <> 0) Then Return New TValue(left.ToNumber / right.ToNumber)
                     Throw New Exception(String.Format("division by zero '{0}'", expression))
                 Case Tokens.MODULO
-                    If (right.ToNumber >= 1) Then Return New TValue(left.ToNumber Mod right.ToNumber)
+                    If (right.ToNumber <> 0) Then Return New TValue(left.ToNumber Mod right.ToNumber)
                     Throw New Exception(String.Format("division by zero '{0}'", expression))
             End Select
         Else
