@@ -10,7 +10,7 @@
             Me.Operator = [operator]
         End Sub
         Public Overrides Function ToString() As String
-            Return String.Format("{0} {1} {2}", Me.Left, Me.Operator.ToSymbol, Me.Right)
+            Return String.Format("({0}) {1} {2}", Me.Left, Me.Operator.ToSymbol, Me.Right)
         End Function
     End Class
 End Namespace
