@@ -80,16 +80,23 @@ Public Class Expression
                     stream.Add(New Token(Tokens.PARENTHESIS_OPEN, input(i), i))
                 Case ")"c
                     stream.Add(New Token(Tokens.PARENTHESIS_CLOSE, input(i), i))
-                Case "."c, "E"c, "e"c, "0"c To "9"c
+                 Case "."c, "E"c, "e"c, "0"c To "9"c
                     Dim index As Integer = i, value As String = String.Empty
                     For j As Integer = index To input.Length - 1
                         If (input(j).IsNumber Or input(j).IsNumberRelated) Then
                             value += input(j)
                             i = j
                             Continue For
+                        ElseIf (j > 0 AndAlso Char.ToLower(input(j - 1)) = "e" And (input(j) = "-" Or input(j) = "+")) Then
+                            value += input(j)
+                            i = j
+                            Continue For
                         End If
                         Exit For
                     Next
+                    If (value.Length > Settings.MaxLength) Then
+                        Throw New Exception(String.Format("Value '{0}' exceeds limit of {1} characters", value, Settings.MaxLength))
+                    End If
                     stream.Add(New Token(Tokens.NUMBER, value, index))
                 Case " "c
                     Continue For
